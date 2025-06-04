@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfect CV Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Perfect CV Generator</h1>
+    <div class="form-section">
+      <label>Upload Profile Picture:</label>
+      <input type="file" id="profile-img" accept="image/*" />
+      <label>Full Name:</label>
+      <input type="text" id="name" placeholder="John Doe" />
+      <label>Email Address:</label>
+      <input type="text" id="email" placeholder="john@example.com" />
+      <label>Phone Number:</label>
+      <input type="text" id="phone" placeholder="+91-XXXXXXXXXX" />
+      <label>Professional Summary:</label>
+      <textarea id="summary" placeholder="Brief professional summary..."></textarea>
+      <label>Education:</label>
+      <textarea id="education" placeholder="List your educational background..."></textarea>
+      <label>Experience:</label>
+      <textarea id="experience" placeholder="List your work experience..."></textarea>
+      <label>Projects:</label>
+      <textarea id="projects" placeholder="List your major projects..."></textarea>
+      <label>Skills:</label>
+      <textarea id="skills" placeholder="Your technical and soft skills..."></textarea>
+      <label>Choose a CV Template:</label>
+      <select id="template-style">
+        <option value="default">Default</option>
+        <option value="minimal">Minimal</option>
+        <option value="dark">Dark Mode</option>
+      </select>
+      <div class="buttons">
+        <button onclick="generateCV()">Generate CV</button>
+        <button onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+
+    <div id="cv-template" class="default-template">
+      <div id="image-preview"><img id="cv-img" src="" alt="Profile Image"/></div>
+      <h2 id="cv-name"></h2>
+      <p><strong>Email:</strong> <span id="cv-email"></span></p>
+      <p><strong>Phone:</strong> <span id="cv-phone"></span></p>
+      <h3>Summary</h3>
+      <p id="cv-summary"></p>
+      <h3>Education</h3>
+      <p id="cv-education"></p>
+      <h3>Experience</h3>
+      <p id="cv-experience"></p>
+      <h3>Projects</h3>
+      <p id="cv-projects"></p>
+      <h3>Skills</h3>
+      <p id="cv-skills"></p>
+    </div>
+  </div>
+  <script src="script.js">
+  </script>
+  <script src="html2pdf.bundle.min.js"></script>
+</body>
+</html>
